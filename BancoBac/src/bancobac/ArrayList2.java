@@ -1,7 +1,7 @@
 package bancobac;
 
 public class ArrayList2 {
-    private int size;
+    public int size;
     private int maxsize;
     private String[] arreglo;
     private final int MAX_SIZE=10;
@@ -20,7 +20,7 @@ public class ArrayList2 {
 
     public void add(String e) throws Exception{
         if (this.size<this.maxsize){
-            this.arreglo[this.size]=e;
+            this.arreglo[this.size]=  e;
             this.size++;
         }
         else{   
@@ -67,5 +67,9 @@ public void eliminarymostrar(){
         lista.add("Jose");
         String elem=lista.getElemento(2);
         System.out.println(elem);
+    }
+
+    void add(ArrayList2 subdiscapacitados) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
