@@ -45,34 +45,20 @@ public class ArrayList2 {
         this.size=0;
     }
 
-    public void insert(int indice, int e) throws Exception{
-        for(int i=indice; indice<=this.size++;i++){
-            int temp1;
-            temp1= getElemento(i);
-            this.arreglo[i]=e;
-            e= temp1;
-        }
+public void eliminarymostrar(){
+        int i = 0;
+        
+        if (this.size != 0){
+            System.out.println(arreglo[0]);
+            while (i != this.size){
+                this.arreglo[i] = this.arreglo[i+1];
+                i ++;
+            }
+            this.size --;           
+        }       
     }
+   
 
-    public int find(int e){
-        for (int i=0;i<=this.size;i++){
-            if(e==this.arreglo[i]){
-                return i;
-            }
-        }
-        return 0;
-    }
-/*
-    public void delete(int e){
-        for(int i=0; i<=this.size++){
-            if (e==this.arreglo[i]){
-                for(int j, j<=this.size--,i++);{
-                    this.arreglo[i]=getElemento(++i);
-                }
-            }
-	}
-    } 
-    */
     public static void main(String[] args) throws Exception{
         ArrayList2 lista = new ArrayList2();
         lista.add("Hola");
