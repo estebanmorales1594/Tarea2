@@ -18,6 +18,14 @@ public class ArrayList2 {
         this.arreglo=new String[max];
     }
 
+    ArrayList2() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    ArrayList2() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void add(String e) throws Exception{
         if (this.size<this.maxsize){
             this.arreglo[this.size]=e;
@@ -45,7 +53,7 @@ public class ArrayList2 {
         this.size=0;
     }
 
-public void eliminarymostrar(){
+    public void eliminarymostrar(){
         int i = 0;
         
         if (this.size != 0){

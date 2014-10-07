@@ -5,28 +5,28 @@ package bancobac;
  * @author Esteban
  */
 public class Cola {
-    private Lista lista;
+    private String[] clientes;
     
     public Cola(){
-        this.lista=new lista();
+        ArrayList2 this.clientes =new ArrayList2();
     } 
     
-    public void queue(Object o){
-        this.lista.agregar(o);
+    public void queue(String o){
+        this.arreglo.add(String o);
     }
     
-    public Object dequeue(){
-        if(this.lista.isEmpty()){
+    public String dequeue(){
+        if(this.arreglo.size == 0){
             throw new Exception()
         }
         
-        Object e=this.lista.first();
-        this.lista.delete(0);
+        String e=arreglo[0];
+        this.arreglo.delete(0);
         return e;
     }
     
     public Object front(){
-        return this.lista.first();
+        return this.arreglo[0];
     }
     
     public void empty(){
@@ -34,10 +34,10 @@ public class Cola {
     }
     
     public Object near(){
-        return this.lista.last();
+        return this.arreglo[size];
     }
     
     public int length(){
-        return this.lista.size();
+        return arreglo.size;
     }
 }
