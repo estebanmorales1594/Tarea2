@@ -1,26 +1,23 @@
 package bancobac;
 
-public class ArrayList2 {
+import java.util.Arrays;
+
+public class Matriz {
     public int size;
-    private int maxsize;
-    private String[] arreglo;
+    private final int maxsize;
+    private Object matriz;
     private final int MAX_SIZE=10;
        
-    public ArrayList2(){
+    public Matriz(){
         this.size=0;
         this.maxsize=MAX_SIZE;
-        this.arreglo=new String[10];
+        this.matriz=new Object[10];
 	}
     
-    public ArrayList2(int max){
-        this.size=0;
-	this.maxsize=max;
-        this.arreglo=new String[max];
-    }
 
-    public void add(String e) throws Exception{
+    public void add(Object e) throws Exception{
         if (this.size<this.maxsize){
-            this.arreglo[this.size]=  e;
+            this.matriz[this.size]=  e;
             this.size++;
         }
         else{   
@@ -32,12 +29,12 @@ public class ArrayList2 {
         return this.size;
     }
 
-    public String getElemento(int indice) throws Exception{
+    public Object getElemento(int indice) throws Exception{
         if (indice >= this.size) {
             throw new Exception();
         }
         else{
-            return arreglo[indice];
+            return matriz[indice];
         }
     }
 
@@ -49,9 +46,9 @@ public class ArrayList2 {
         int i = 0;
         
         if (this.size != 0){
-            System.out.println(arreglo[0]);
+            System.out.println(matriz[0]);
             while (i != this.size){
-                this.arreglo[i] = this.arreglo[i+1];
+                this.matriz[i] = this.matriz[i+1];
                 i ++;
             }
             this.size --;           
@@ -60,12 +57,13 @@ public class ArrayList2 {
    
 
     public static void main(String[] args) throws Exception{
-        ArrayList2 lista = new ArrayList2();
-        lista.add("Hola");
-        lista.add("Adios");
-        lista.add("Esteban");
-        lista.add("Jose");
-        String elem=lista.getElemento(2);
-        System.out.println(elem);
+        Matriz matriz = new Matriz();
+        matriz.add("gdgeg");
+        matriz.add("sfegege");
+        matriz.add("sfwfwfw");
+        matriz.add("gegegeg");
+        String[] elem;
+        elem = matriz.getElemento(2);
+        System.out.println(Arrays.toString(elem));
     }
 }
