@@ -3,7 +3,11 @@ package bancobac;
 
 public class ColaClientesArray {
     
+<<<<<<< HEAD
     Matriz discapacitados = new Matriz();
+=======
+    ArrayList2 discapacitados = new ArrayList2();
+>>>>>>> origin/master
     ArrayList2 adultomayor = new ArrayList2();
     ArrayList2 embarazada = new ArrayList2();
     ArrayList2 corporativo = new ArrayList2();
@@ -37,10 +41,18 @@ public class ColaClientesArray {
 }
     public static void main(String[] args) throws Exception{
         ColaClientesArray Cola;
+<<<<<<< HEAD
         Cola = new ColaClientesArray("fgdgd", "discapacitado", "afefesfe", "fsefsef", "ewfwefwe");
         //String Elem1 = Cola.discapacitados.getElemento(0);
         //System.out.print(Elem1);
         String Elem2 = Cola.subdiscapacitados.getElemento(0);
         System.out.println(Elem2);
+=======
+        Cola = new ColaClientesArray("fgdgd", "fsfsfs", "afefesfe", "fsefsef", "ewfwefwe");
+        //String Elem1 = Cola.discapacitados.getElemento(0);
+        //System.out.print(Elem1);
+        String Elem2 = Cola.subdiscapacitados.getElemento(0);
+        System.out.print(Elem2);
+>>>>>>> origin/master
     }
 }
