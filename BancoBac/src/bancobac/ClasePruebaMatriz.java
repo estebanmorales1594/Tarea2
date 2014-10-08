@@ -12,19 +12,29 @@ public class ClasePruebaMatriz {
         this.arreglo = new String[10][5];
 }
     public void agregar(String cliente){
+        int c = 0;
+        
         if (this.size < this.maxsize) {
-            this.arreglo[this.size][this.size] = cliente;
-            this.size++;       
+            
+            if (this.size<=4){
+                this.arreglo[c][this.size] = cliente;
+                this.size++;
+            }
+            else{                
+                this.size = 0;
+                if (this.size < 5) {
+                    ++c;
+                    this.arreglo[c][this.size] = cliente;
+                    this.size++;
+            }
         }
     }
-    
+    }
     public String getElemento(int indice, int indice2) throws Exception{
-        if (indice >= this.size) {
-            throw new Exception();
-        }
-        else{
-            return arreglo[indice][indice2];
-        }
+        
+        
+        return arreglo[indice][indice2];
+        
     } 
     
     public void eliminarymostrar(){
@@ -33,7 +43,7 @@ public class ClasePruebaMatriz {
         if (this.size != 0){
             
             while (i != this.size){
-                this.arreglo[i] = this.arreglo[i+1];
+                this.arreglo[i][i] = this.arreglo[i+1][i+0];
                 i ++;
             }
             this.size --;           
@@ -44,20 +54,26 @@ public static void main(String[] args) throws Exception {
         
         ClasePruebaMatriz arreglo = new ClasePruebaMatriz();
         
-        arreglo.agregar("hola");
+        arreglo.agregar("holaA");
         arreglo.agregar("ADIOS");
         arreglo.agregar("abc");
+        arreglo.agregar("sisis");
+        arreglo.agregar("nonono");
         
+        arreglo.agregar("0 de indice 1");
+        arreglo.agregar("1 de indice 1");
+        arreglo.agregar("2 de indice 1");
+        arreglo.agregar("3 de indice 1");
+        arreglo.agregar("4 de indice 1");
         
+        arreglo.agregar("vaaamos");
        
-            
-        String elem = arreglo.getElemento(0,1);
-            
+        String elem = arreglo.getElemento(1,4);
         System.out.println(elem);
                                                
     }
         
-       
+   
     }
 
 
