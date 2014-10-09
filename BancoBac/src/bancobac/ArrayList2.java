@@ -1,4 +1,5 @@
 package bancobac;
+import java.util.List;
 
 public class ArrayList2 {
     public int size;
@@ -27,6 +28,7 @@ public class ArrayList2 {
             throw new Exception();
         }
     }
+    
 
     public int getsize(){
         return this.size;
@@ -69,7 +71,4 @@ public class ArrayList2 {
         System.out.println(elem);
     }
 
-    void add(ArrayList2 subdiscapacitados) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
