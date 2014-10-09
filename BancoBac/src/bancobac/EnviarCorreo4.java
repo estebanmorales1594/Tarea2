@@ -1,73 +1,67 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package bancobac;
 
 /**
  *
  * @author Esteban
  */
-import java.util.*;
-import javax.mail.*;
-import javax.mail.internet.*;
-import javax.swing.JOptionPane;
+import java.util.Properties; 
+import javax.mail.*; 
+import javax.mail.internet.InternetAddress; 
+import javax.mail.internet.MimeMessage; 
+
 public class EnviarCorreo4 {
-        String miCorreo;
-        String miContraseña;
-        String servidorSMTP = "smtp.gmail.com";
-        String puertoEnvio = "465";
-        String mailReceptor;
-        String asunto;
-        String cuerpo;
-        //metodo que recibe y envia el email
-        public EnviarCorreo4(String miCorreo, String miContraseña, String mailReceptor, String asunto, String cuerpo) {
-            this.miCorreo = miCorreo;
-            this.miContraseña = miContraseña;
-            this.mailReceptor = mailReceptor;
-            this.asunto = asunto;
-            this.cuerpo = cuerpo;
-            Properties props = new Properties();//propiedades a agragar
-            props.put("mail.smtp.user", this.miCorreo);//correo origen
-            props.put("mail.smtp.host", servidorSMTP);//tipo de servidor
-            props.put("mail.smtp.port", puertoEnvio);//puesto de salida
-            props.put("mail.smtp.starttls.enable", "true");//inicializar el servidor
-            props.put("mail.smtp.auth", "true");//autentificacion
-            props.put("mail.smtp.socketFactory.port", puertoEnvio);//activar el puerto
-            props.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
-            props.put("mail.smtp.socketFactory.fallback", "false");
-            SecurityManager security = System.getSecurityManager();
-            try {
-                Authenticator auth = new autentificadorSMTP();//autentificar el correo
-                Session session = Session.getInstance(props, auth);//se inica una session
-                // session.setDebug(true);
-                MimeMessage msg = new MimeMessage(session);//se crea un objeto donde ira la estructura del correo
-                msg.setText(this.cuerpo);//seteo el cuertpo del mensaje
-                msg.setSubject(this.asunto);//setea asusto (opcional)
-                msg.setFrom(new InternetAddress(this.miCorreo));//agrega la la propiedad del correo origen
-                msg.addRecipient(Message.RecipientType.TO, new InternetAddress(this.mailReceptor));//agrega el destinatario
-                Transport.send(msg);//envia el mensaje
-                JOptionPane.showMessageDialog(null, "Email enviado");//alerta de que mensaje fue enviado correctamente
-            } catch (Exception mex) {//en caso de que ocurra un error se crea una excepcion
-                JOptionPane.showMessageDialog(null, "Email no enviado");//muestra con cuadro de dialogo un mensaje que correo no fue enviado
-            }//fin try-catch
-        }//fin metodo enviaEmail
-        private class autentificadorSMTP extends javax.mail.Authenticator {
-            @Override
-            public PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(miCorreo, miContraseña);//autentifica tanto el correo como la contraseña
-            }
-        }
-        
-        public static void main(String[] args){
-        EnviarCorreo4 mail = new EnviarCorreo4
-                ("estructurasdatosjje@gmail.com",
-                        "datosjje",
-                        "estebanmorales1594@hotmail.com",
-                        "hola",
-                        "ndacjkskvvjv");
-            }
+    final String Cuenta = "estructurasdatosjje@gmail.com"; 
+    final String Contraseña = "datosjje"; 
+    final String servidorSMTP = "smtp.gmail.com"; 
+    final String puertoEnvio = "465"; 
+    String cliente = null; 
+    String asunto = null; 
+    String Correo = null; 
+
+    public EnviarCorreo4(String Cliente, String asunto, String Correo) throws MessagingException { 
+        this.cliente = Cliente; 
+        this.asunto = asunto; 
+        this.Correo = Correo; 
+
+        Properties propiedades = new Properties(); 
+        propiedades.put("mail.smtp.user", Cuenta); 
+        propiedades.put("mail.smtp.host", servidorSMTP); 
+        propiedades.put("mail.smtp.port", puertoEnvio); 
+        propiedades.put("mail.smtp.starttls.enable", "true"); 
+        propiedades.put("mail.smtp.auth", "true"); 
+        propiedades.put("mail.smtp.socketFactory.port", puertoEnvio); 
+        propiedades.put("mail.smtp.socketFactory.class", 
+                "javax.net.ssl.SSLSocketFactory"); 
+        propiedades.put("mail.smtp.socketFactory.fallback", "false"); 
+
+        SecurityManager seguridad = System.getSecurityManager(); 
+
+     
+            Authenticator autorizar = new EnviarCorreo4.autentificadorSMTP(); 
+            Session sesion = Session.getInstance(propiedades, autorizar); 
+            // session.setDebug(true); 
+
+            MimeMessage msg = new MimeMessage(sesion); 
+            msg.setText(Correo); 
+            msg.setSubject(asunto); 
+            msg.setFrom(new InternetAddress(Cuenta)); 
+            msg.addRecipient(Message.RecipientType.TO, new InternetAddress( 
+                    cliente)); 
+            Transport.send(msg); 
+       
+
+    } 
+
+    private class autentificadorSMTP extends javax.mail.Authenticator { 
+        @Override
+        public PasswordAuthentication getPasswordAuthentication() { 
+            return new PasswordAuthentication(Cuenta, Contraseña); 
+        } 
+    } 
+ 
+    public static void main(String[] args) throws MessagingException { 
+        EnviarCorreo4 EnviadorMail = new EnviarCorreo4("estebanmorales1594@hotmail.com", "hola", "hola mundo");
+        System.out.println("Mensaje Enviado"); 
+    } 
 }
 
