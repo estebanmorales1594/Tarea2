@@ -60,7 +60,7 @@ public class EnviarCorreo4 {
     } 
  
     public static void main(String[] args) throws MessagingException { 
-        EnviarCorreo4 EnviadorMail = new EnviarCorreo4("estebanmorales1594@hotmail.com", "hola", "hola mundo");
+        EnviarCorreo4 EnviadorMail = new EnviarCorreo4("flaco269510@gmail.com", "hola", "hola mundo");
         System.out.println("Mensaje Enviado"); 
     } 
 }
