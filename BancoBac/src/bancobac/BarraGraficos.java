@@ -13,21 +13,10 @@ import org.jfree.data.category.DefaultCategoryDataset;
 public class BarraGraficos extends JPanel {
     JFreeChart barra;
     DefaultCategoryDataset datos;
-    JTextField variable1,variable2,variable3,variable4,variable5;
     JLabel grafico;
     JButton boton;
 
     public BarraGraficos(){
-        variable1=new JTextField(7);
-        variable1.setText("20");
-        variable2=new JTextField(7);
-        variable2.setText("40");
-        variable3=new JTextField(7);
-        variable3.setText("10");
-        variable4=new JTextField(7);
-        variable4.setText("40");
-        variable5=new JTextField(7);
-        variable5.setText("10");
 
         datos = new DefaultCategoryDataset();
 
@@ -36,11 +25,11 @@ public class BarraGraficos extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                datos.setValue(Integer.parseInt(variable1.getText()), "Personas Discapacitadas:", "");
-                datos.setValue(Integer.parseInt(variable2.getText()), "Adulto Mayor:", "");
-                datos.setValue(Integer.parseInt(variable3.getText()), "Mujeres Embarazadas:", "");
-                datos.setValue(Integer.parseInt(variable4.getText()), "Clientes Corporativos:", "");
-                datos.setValue(Integer.parseInt(variable5.getText()), "Clientes Regulares:", "");
+                datos.setValue(10/*Aqui va la cantidad de los clientes discapacitados*/, "Personas Discapacitadas:", ""); 
+                datos.setValue(20/*Aqui va la cantidad de los clientes adulto mayor*/, "Adulto Mayor:", "");
+                datos.setValue(30/*Aqui va la cantidad de las mujeres embarazadas*/, "Mujeres Embarazadas:", "");
+                datos.setValue(40/*Aqui va la cantidad de los clientes corporativos*/, "Clientes Corporativos:", "");
+                datos.setValue(50/*Aqui va la cantidad de los clientes regulares*/, "Clientes Regulares:", "");
                 BufferedImage pastelgrafico=barra.createBufferedImage(450, 300);
                 ImageIcon img=new ImageIcon(pastelgrafico);
                 grafico.setIcon(img);
@@ -48,11 +37,6 @@ public class BarraGraficos extends JPanel {
 
         });
 
-        datos.addValue(Integer.parseInt(variable1.getText()), "Personas Discapacitadas:", "");
-        datos.addValue(Integer.parseInt(variable2.getText()), "Adulto Mayor:", "");
-        datos.addValue(Integer.parseInt(variable3.getText()), "Mujeres Embarazadas:", "");
-        datos.addValue(Integer.parseInt(variable4.getText()), "Clientes Corporativos:", "");
-        datos.addValue(Integer.parseInt(variable5.getText()), "Clientes Regulares:", "");
 
         barra = ChartFactory.createBarChart3D("Sample Category Chart", "Quarters","Sales",datos,PlotOrientation.VERTICAL,true,true,true);
 
@@ -61,16 +45,6 @@ public class BarraGraficos extends JPanel {
         grafico=new JLabel(img);
 
         JPanel p=new JPanel();
-        p.add(new JLabel("Personas Discapacitadas:"));
-        p.add(variable1);
-        p.add(new JLabel("Adulto Mayor:"));
-        p.add(variable2);
-        p.add(new JLabel("Mujeres Embarazadas:"));
-        p.add(variable3);
-        p.add(new JLabel("Clientes Corporativos:"));
-        p.add(variable4);
-        p.add(new JLabel("Clientes Regulares:"));
-        p.add(variable5);
         p.add(boton);  
 
         add(grafico);

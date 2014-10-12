@@ -61,11 +61,16 @@ public class EnviarCorreo4 {
         } 
     } 
  
+<<<<<<< HEAD
     public static void main(String[] args) throws MessagingException {
         
         
         EnviarCorreo4 Envia = new EnviarCorreo4();
         Envia.EnviarCorreo("jose12.13@hotmail.com", "hola", "cuek");
+=======
+    public static void main(String[] args) throws MessagingException { 
+        EnviarCorreo4 EnviadorMail = new EnviarCorreo4("flaco269510@gmail.com", "hola", "hola mundo");
+>>>>>>> FETCH_HEAD
         System.out.println("Mensaje Enviado"); 
     } 
 }
