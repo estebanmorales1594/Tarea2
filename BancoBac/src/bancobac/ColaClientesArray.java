@@ -1,58 +1,139 @@
 package bancobac;
 
+import javax.mail.MessagingException;
 
 public class ColaClientesArray {
     
-<<<<<<< HEAD
-    Matriz discapacitados = new Matriz();
-=======
-    ArrayList2 discapacitados = new ArrayList2();
->>>>>>> origin/master
-    ArrayList2 adultomayor = new ArrayList2();
-    ArrayList2 embarazada = new ArrayList2();
-    ArrayList2 corporativo = new ArrayList2();
-    ArrayList2 normal = new ArrayList2();
+    ClasePruebaMatriz discapacitados;
+    ClasePruebaMatriz adultomayor;
+    ClasePruebaMatriz embarazada;
+    ClasePruebaMatriz corporativo ;
+    ClasePruebaMatriz normal ;
     
-    ArrayList2 discapacitadoscomp = new ArrayList2();
-    ArrayList2 adultomayorcomp = new ArrayList2();
-    ArrayList2 embarazadacomp = new ArrayList2();
-    ArrayList2 corporativocomp = new ArrayList2();
-    ArrayList2 normalcomp = new ArrayList2();
+    ClasePruebaMatriz discapacitadoscomp;
+    ClasePruebaMatriz adultomayorcomp;
+    ClasePruebaMatriz embarazadacomp;
+    ClasePruebaMatriz corporativocomp;
+    ClasePruebaMatriz normalcomp;
+    
+    EnviarCorreo4 Envia;
+    
+    String Correo;
+    
+    public ColaClientesArray(){
+        
+        this.discapacitados = new ClasePruebaMatriz();
+        this.adultomayor = new ClasePruebaMatriz();
+        this.embarazada = new ClasePruebaMatriz();
+        this.corporativo = new ClasePruebaMatriz();
+        this.normal = new ClasePruebaMatriz();
+    
+        this.discapacitadoscomp = new ClasePruebaMatriz();
+        this.adultomayorcomp = new ClasePruebaMatriz();
+        this.embarazadacomp = new ClasePruebaMatriz();
+        this.corporativocomp = new ClasePruebaMatriz();
+        this.normalcomp = new ClasePruebaMatriz();
+        
+        this.Envia = new EnviarCorreo4();
+        this.Correo = null;
+        
+    }
 
-    ArrayList2 subdiscapacitados = new ArrayList2();
-    ArrayList2 subadultomayor = new ArrayList2();
-    ArrayList2 subembarazada = new ArrayList2();
-    ArrayList2 subcorporativo = new ArrayList2();
-    ArrayList2 subnormal = new ArrayList2();
-  
-    public ColaClientesArray(String nombre, String tipo, String correo, String hora, String fecha) throws Exception{
+    public void agregarCola (String cliente, String correo, String tipo) {
         
     if (tipo == "discapacitado"){
-        
-        subdiscapacitados.add(nombre);
-        subdiscapacitados.add(correo);
-        subdiscapacitados.add(tipo);
-        subdiscapacitados.add(fecha);
-        subdiscapacitados.add(hora);
-
-        discapacitados.add( subdiscapacitados );
-        discapacitadoscomp.add(subdiscapacitados);
-}              
-}
-    public static void main(String[] args) throws Exception{
-        ColaClientesArray Cola;
-<<<<<<< HEAD
-        Cola = new ColaClientesArray("fgdgd", "discapacitado", "afefesfe", "fsefsef", "ewfwefwe");
-        //String Elem1 = Cola.discapacitados.getElemento(0);
-        //System.out.print(Elem1);
-        String Elem2 = Cola.subdiscapacitados.getElemento(0);
-        System.out.println(Elem2);
-=======
-        Cola = new ColaClientesArray("fgdgd", "fsfsfs", "afefesfe", "fsefsef", "ewfwefwe");
-        //String Elem1 = Cola.discapacitados.getElemento(0);
-        //System.out.print(Elem1);
-        String Elem2 = Cola.subdiscapacitados.getElemento(0);
-        System.out.print(Elem2);
->>>>>>> origin/master
+        this.discapacitados.agregar(cliente, correo, tipo);
+        this.discapacitadoscomp.agregar(cliente, correo, tipo);
     }
+    
+    else if (tipo=="adultomayor"){
+        this.adultomayor.agregar(cliente, correo, tipo);
+        this.adultomayorcomp.agregar(cliente, correo, tipo);      
+    }
+    
+    else if (tipo == "embarazada"){
+        this.embarazada.agregar(cliente, correo, tipo);
+        this.embarazadacomp.agregar(cliente, correo, tipo);
+    }
+    else if (tipo == "corporativo"){
+        this.corporativo.agregar(cliente, correo, tipo);
+        this.corporativocomp.agregar(cliente, correo, tipo);
+    }   
+    
+    else if (tipo == "normal"){
+        this.normal.agregar(cliente, correo, tipo);
+        this.normalcomp.agregar(cliente, correo, tipo);     
+    } 
+    
+  }
+    
+    public void EnviarCorreoySacar() throws MessagingException{
+        
+        if (discapacitados != null ){
+            
+            Correo = this.discapacitados.tomarCorreo() ;
+            Envia.EnviarCorreo(Correo, "discapacitado", "OMG");
+            discapacitados.eliminar();
+        }
+        
+        else if (adultomayor != null) {
+           Correo = this.adultomayor.tomarCorreo() ;
+           Envia.EnviarCorreo(Correo, "adultomayor", "OMG");
+           adultomayor.eliminar();
+        }
+        
+        else if (embarazada != null) {
+           Correo = this.embarazada.tomarCorreo() ;
+           Envia.EnviarCorreo(Correo, "embarazada", "OMG");
+           embarazada.eliminar(); 
+           
+        }
+        
+        else if (corporativo != null) {
+           Correo = this.corporativo.tomarCorreo() ;
+           Envia.EnviarCorreo(Correo, "coprorativo", "OMG");
+           corporativo.eliminar(); 
+        
+    }
+        
+        else if (normal != null) {
+           
+           Correo = this.normal.tomarCorreo() ;
+           Envia.EnviarCorreo(Correo, "normal", "OMG");
+           normal.eliminar(); 
+        }
+         
+    }        
+            
+  public static void main(String[] args) throws Exception {
+           
+        ColaClientesArray cola = new ColaClientesArray();
+        
+        cola.agregarCola("pepe","jose12.13@hotmail.com","discapacitado");
+        cola.agregarCola("juan","jose12.13@hotmail.com","corporativo");
+        cola.agregarCola("maria","jose12.13@hotmail.com","embarazada");
+        cola.agregarCola("mario","jose12.13@hotmail.com","normal");
+        cola.agregarCola("jose","jose12.13@hotmail.com","adultomayor");
+        cola.agregarCola("pepe","jose12.13@hotmail.com","");
+        cola.agregarCola("juan","jose12.13@hotmail.com","corporativo");
+        cola.agregarCola("maria","jose12.13@hotmail.com","embarazada");
+        cola.agregarCola("mario","jose12.13@hotmail.com","normal");
+        cola.agregarCola("jose","jose12.13@hotmail.com","adultomayor");
+        cola.agregarCola("pepe","jose12.13@hotmail.com","");
+        cola.agregarCola("juan","jose12.13@hotmail.com","corporativo");
+        cola.agregarCola("maria","jose12.13@hotmail.com","embarazada");
+        cola.agregarCola("mario","jose12.13@hotmail.com","normal");
+        cola.agregarCola("jose","jose12.13@hotmail.com","adultomayor");
+        
+        cola.EnviarCorreoySacar() ;
+
+        
+        System.out.println(cola.discapacitados.getElemento(0,0));
+        System.out.println(cola.normal.getElemento(0,0));
+        System.out.println(cola.corporativo.getElemento(0,0));
+        System.out.println(cola.embarazada.getElemento(0,0));
+        System.out.println(cola.adultomayor.getElemento(0,0));
+        
+                
+  }
 }

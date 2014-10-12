@@ -10,18 +10,21 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage; 
 
 public class EnviarCorreo4 {
-    final String Cuenta = "estructurasdatosjje@gmail.com"; 
-    final String Contraseña = "datosjje"; 
-    final String servidorSMTP = "smtp.gmail.com"; 
-    final String puertoEnvio = "465"; 
-    String cliente = null; 
-    String asunto = null; 
-    String Correo = null; 
+    final String Cuenta; 
+    final String Contraseña; 
+    final String servidorSMTP; 
+    final String puertoEnvio; 
+    
+    public EnviarCorreo4(){
+        this.Cuenta = "estructurasdatosjje@gmail.com"; 
+        this.Contraseña = "datosjje"; 
+        this.servidorSMTP = "smtp.gmail.com"; 
+        this.puertoEnvio = "465";
+    }
+        
 
-    public EnviarCorreo4(String Cliente, String asunto, String Correo) throws MessagingException { 
-        this.cliente = Cliente; 
-        this.asunto = asunto; 
-        this.Correo = Correo; 
+    public  void EnviarCorreo(String Cliente, String asunto, String Correo) throws MessagingException { 
+
 
         Properties propiedades = new Properties(); 
         propiedades.put("mail.smtp.user", Cuenta); 
@@ -45,8 +48,7 @@ public class EnviarCorreo4 {
             msg.setText(Correo); 
             msg.setSubject(asunto); 
             msg.setFrom(new InternetAddress(Cuenta)); 
-            msg.addRecipient(Message.RecipientType.TO, new InternetAddress( 
-                    cliente)); 
+            msg.addRecipient(Message.RecipientType.TO, new InternetAddress(Cliente)); 
             Transport.send(msg); 
        
 
@@ -59,8 +61,11 @@ public class EnviarCorreo4 {
         } 
     } 
  
-    public static void main(String[] args) throws MessagingException { 
-        EnviarCorreo4 EnviadorMail = new EnviarCorreo4("estebanmorales1594@hotmail.com", "hola", "hola mundo");
+    public static void main(String[] args) throws MessagingException {
+        
+        
+        EnviarCorreo4 Envia = new EnviarCorreo4();
+        Envia.EnviarCorreo("jose12.13@hotmail.com", "hola", "cuek");
         System.out.println("Mensaje Enviado"); 
     } 
 }

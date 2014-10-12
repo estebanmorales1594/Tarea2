@@ -41,6 +41,6 @@ public class EnviarCorreo2 {
     
      public static void main(String[] args){
         EnviarCorreo2 mail = new EnviarCorreo2();
-        mail.Enviar("estebanmorales1594@hotmail.com","Esto es una prueba","Este correo fue enviado usando JavaMail");
+        mail.Enviar("flaco269510@gmail.com","Esto es una prueba","Este correo fue enviado usando JavaMail");
     }
 }
