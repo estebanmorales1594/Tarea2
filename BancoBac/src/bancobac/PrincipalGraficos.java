@@ -9,6 +9,7 @@ public class PrincipalGraficos extends JApplet {
     PastelGraficos pastelgrafico;
     BarraGraficos barragrafico;
  
+    @Override
     public void init(){
         pestañas=new JTabbedPane();
         pastelgrafico=new PastelGraficos();
@@ -19,7 +20,3 @@ public class PrincipalGraficos extends JApplet {
         add(pestañas);
     } 
 }
-
-
-
-
