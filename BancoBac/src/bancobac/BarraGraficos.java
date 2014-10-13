@@ -15,6 +15,7 @@ public class BarraGraficos extends JPanel {
     DefaultCategoryDataset datos;
     JLabel grafico;
     JButton boton;
+    ColaClientesArray cola;
 
     public BarraGraficos(){
 
@@ -25,11 +26,21 @@ public class BarraGraficos extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                datos.setValue(10/*Aqui va la cantidad de los clientes discapacitados*/, "Personas Discapacitadas:", ""); 
-                datos.setValue(20/*Aqui va la cantidad de los clientes adulto mayor*/, "Adulto Mayor:", "");
-                datos.setValue(30/*Aqui va la cantidad de las mujeres embarazadas*/, "Mujeres Embarazadas:", "");
-                datos.setValue(40/*Aqui va la cantidad de los clientes corporativos*/, "Clientes Corporativos:", "");
-                datos.setValue(50/*Aqui va la cantidad de los clientes regulares*/, "Clientes Regulares:", "");
+                int CantDisc=cola.discapacitados.size;
+                int CantAdultos=cola.adultomayor.size;
+                int CantEmb=cola.embarazada.size;
+                int CantCorp=cola.corporativo.size;
+                int CantNormal=cola.normal;
+                /*Las cantidades se sacan en base a las cantidades que se 
+                encuentran en el momento en el banco, si hubiera que hacerlo
+                con la cantidad total.... 
+                NADA MAS AGREGARLE A CADA UNO AL FINAL COMP
+                */
+                datos.setValue(CantDisc/*Aqui va la cantidad de los clientes discapacitados*/, "Personas Discapacitadas:", ""); 
+                datos.setValue(CantAdultos/*Aqui va la cantidad de los clientes adulto mayor*/, "Adulto Mayor:", "");
+                datos.setValue(CantEmb/*Aqui va la cantidad de las mujeres embarazadas*/, "Mujeres Embarazadas:", "");
+                datos.setValue(CantCorp/*Aqui va la cantidad de los clientes corporativos*/, "Clientes Corporativos:", "");
+                datos.setValue(CantNormal/*Aqui va la cantidad de los clientes regulares*/, "Clientes Regulares:", "");
                 BufferedImage pastelgrafico=barra.createBufferedImage(450, 300);
                 ImageIcon img=new ImageIcon(pastelgrafico);
                 grafico.setIcon(img);

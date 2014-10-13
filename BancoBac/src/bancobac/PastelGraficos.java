@@ -26,11 +26,21 @@ public class PastelGraficos extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                porciones.insertValue(0, "Personas Discapacitadas:", 10/*Aqui va la cantidad de los clientes discapacitados*/);
-                porciones.insertValue(1, "Adulto Mayor:", 20/*Aqui va la cantidad de los clientes adulto mayor*/);
-                porciones.insertValue(2, "Mujeres Embarazadas:", 30/*Aqui va la cantidad de las mujeres dicapacitadas*/);
-                porciones.insertValue(3, "Clientes Corporativos:", 40/*Aqui va la cantidad de los clientes corporativos*/);
-                porciones.insertValue(4, "Clientes Regulares:", 50/*Aqui va la cantidad de los clientes regulares*/);
+                int CantDisc=cola.discapacitados.size;
+                int CantAdultos=cola.adultomayor.size;
+                int CantEmb=cola.embarazada.size;
+                int CantCorp=cola.corporativo.size;
+                int CantNormal=cola.normal;
+                /*Las cantidades se sacan en base a las cantidades que se 
+                encuentran en el momento en el banco, si hubiera que hacerlo
+                con la cantidad total.... 
+                NADA MAS AGREGARLE A CADA UNO AL FINAL COMP
+                */
+                porciones.insertValue(0, "Personas Discapacitadas:", CantDisc/*Aqui va la cantidad de los clientes discapacitados*/);
+                porciones.insertValue(1, "Adulto Mayor:", CantAdultos/*Aqui va la cantidad de los clientes adulto mayor*/);
+                porciones.insertValue(2, "Mujeres Embarazadas:", CantEmb/*Aqui va la cantidad de las mujeres dicapacitadas*/);
+                porciones.insertValue(3, "Clientes Corporativos:", CantCorp/*Aqui va la cantidad de los clientes corporativos*/);
+                porciones.insertValue(4, "Clientes Regulares:", CantNormal/*Aqui va la cantidad de los clientes regulares*/);
                 BufferedImage graficopastel=pastel.createBufferedImage(450, 300);
                 ImageIcon img=new ImageIcon(graficopastel);
                 grafico.setIcon(img);
