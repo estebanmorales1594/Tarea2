@@ -11,33 +11,34 @@ En ambos metodos, se va a enviar correos al cliente notificando su situacion
 */
 
 public class ClasePruebaMatriz {
+
     public int size;
     public int maxsize;
-    public String[][]arreglo;
+    public String[][] arreglo;
     public final int MAX_SIZE = 10;
     EnviarCorreo Envia;
     String Correo;
-   
-    
-    public ClasePruebaMatriz(){
+    public int abc;
+
+    public ClasePruebaMatriz() {
         this.size = 0;
         this.maxsize = MAX_SIZE;
         this.arreglo = new String[100][3];
         this.Envia = new EnviarCorreo();
-        
- 
-   
-}
-    public void agregar(String cliente, String correo, String tipo) throws MessagingException{
-        
-        
-        if (this.size < this.maxsize) {  
+        this.abc = 1;
+
+    }
+
+    public void agregar(String cliente, String correo, String tipo) throws MessagingException {
+
+        if (this.size < this.maxsize) {
             this.arreglo[this.size][0] = cliente;
             this.arreglo[this.size][1] = correo;
-            this.arreglo[this.size][2] = tipo;               
+            this.arreglo[this.size][2] = tipo;
+          
             this.size++;
-            //Envia.Enviador(correo, "Banco", "Sr(a). "+cliente+" usted ha sido agregado a nuestro sistema");
-            }
+        }
+        
     }        
     
     
@@ -45,43 +46,57 @@ public class ClasePruebaMatriz {
         
         
         if (this.size < this.maxsize) {  
-            this.arreglo[this.size][0] = cliente;
-            this.arreglo[this.size][1] = correo;
-            this.arreglo[this.size][2] = tipo;               
-            this.size++;
-            }
-    }   
-    
-    
+
+            Envia.Enviador(correo, "Banco", "Sr(a). " + cliente + " usted ha sido agregado a nuestro sistema");
+        }
+    }
+
     public String getElemento(int indice, int indice2) {
-        
-        
+
         return arreglo[indice][indice2];
-        
+
     }
-    
-    public void empty(){
-        this.size=0;
+
+    public void empty() {
+        this.size = 0;
     }
-    
-    
-    public void eliminar() throws MessagingException{
+
+    public void eliminar() throws MessagingException {
         int i = 0;
-        
-        if (this.size != 0){
-            String Correo2 = this.arreglo[0][1];
-            String nombre2 = this.arreglo[0][0];
-            //Envia.Enviador(Correo2, "Se turno", "Sr(a)"+nombre2+", llego su turno puede pasar a la caja");
+
+        String Correo2 = this.arreglo[0][1];
+        String nombre2 = this.arreglo[0][0];
+
+        Envia.Enviador(Correo2, "Se turno", "Sr(a)"+nombre2+", llego su turno puede pasar a la caja");
             
-            while (i != this.size){
-                this.arreglo[i] = this.arreglo[i+1];
-                i ++;
+        while (i != this.size){
+            this.arreglo[i] = this.arreglo[i+1];
+            i ++;
             }
-            this.size --;           
+        this.size --;           
         }       
-    }
-}
-
-
     
 
+
+
+
+    public static void main(String[] args) throws Exception {
+           
+        ClasePruebaMatriz cola = new ClasePruebaMatriz();
+        
+        cola.agregar("jose","jose12.13@hotmail.com","corporativo");
+        cola.agregar("a","jose12.13@hotmail.com","normal");
+        cola.agregar("b","jose12.13@hotmail.com","normal");
+        cola.agregar("c","jose12.13@hotmail.com","normal");
+        cola.agregar("f","jose12.13@hotmail.com","normal");
+        
+        
+        cola.eliminar();
+        cola.eliminar();
+        
+        String cola1 = cola.getElemento(0,0);
+        
+        System.out.println(cola1);
+     
+            }
+}

@@ -52,7 +52,8 @@ public class ColaClientesArray {
         this.discapacitadoscomp.agregarC(cliente, correo, tipo);
     }
     
-    else if (tipo=="adulto mayor"){
+    else if (tipo == "adulto mayor"){
+        
         this.adultomayor.agregar(cliente, correo, tipo);
         this.adultomayorcomp.agregarC(cliente, correo, tipo);      
     }
@@ -73,8 +74,10 @@ public class ColaClientesArray {
     
   }
     
+ 
     public void sacar() throws MessagingException{
         
+
         if (discapacitados.getElemento(0, 0) != null ){
             discapacitados.eliminar();
         }
@@ -95,27 +98,41 @@ public class ColaClientesArray {
         else if (normal.getElemento(0, 0) != null) {
            normal.eliminar(); 
         }
-    }
 
-                      
-            
+
+      
+   
+        }   
+    
+
+    
+
             
   public static void main(String[] args) throws Exception {
            
         ColaClientesArray cola = new ColaClientesArray();
+        ClasePruebaMatriz hola = new ClasePruebaMatriz();
         
-        cola.agregarCola("pepe","estebanmorales1594@hotmail.com","normal");
-        cola.agregarCola("juan","estebanmorales1594@gmail.com","corporativo");
-        cola.agregarCola("maria","estebanmorales1594@hotmail.com","adulto mayor");
+
+
+
+        cola.agregarCola("pepe","jose12.13@hotmail.com","adulto mayor");
+        cola.agregarCola("juan","jose12.13@hotmail.com","discapacitado");
+        cola.agregarCola("maria","jose12.13@hotmail.com","discapacitado");
+        cola.agregarCola("hola","jose12.13@hotmail.com","adulto mayor");
+        cola.agregarCola("nooooo","jose12.13@hotmail.com","normal");
+
         
+        cola.sacar();
+        cola.sacar();
         cola.sacar();
         cola.sacar();
 
-        
+
         System.out.println(cola.discapacitados.getElemento(0,0));
-        System.out.println(cola.normal.getElemento(0,0));
-        System.out.println(cola.corporativo.getElemento(0,0));
+        System.out.println(cola.adultomayor.getElemento(0,0));
         System.out.println(cola.embarazada.getElemento(0,0));
-        System.out.println(cola.adultomayor.getElemento(0,0));               
+        System.out.println(cola.corporativo.getElemento(0,0));
+        System.out.println(cola.normal.getElemento(0,0));               
   }
 }
