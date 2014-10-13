@@ -10,6 +10,13 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
+/*
+Esta clase es para crear los graficos de barras, 
+utilizando la libreria JFreeChart,
+va a extraer el tamaña de cada una de las listas colas, 
+dicha cantidad va a servir para realizar la grafica.
+*/
+
 public class BarraGraficos extends JPanel {
     JFreeChart barra;
     DefaultCategoryDataset datos;

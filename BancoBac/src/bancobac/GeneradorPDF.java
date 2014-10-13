@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package bancobac;
 
 import com.itextpdf.text.Document;
@@ -13,6 +7,10 @@ import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+/*
+Esto es una prueba para la crear un PDF con la lista de los clientes
+*/
 
 public class GeneradorPDF {
     

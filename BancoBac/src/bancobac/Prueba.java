@@ -1,9 +1,8 @@
 package bancobac;
 
-/**
- *
- * @author Esteban
- */
+/*
+Esta clase es una prueba de funciones(IGNORAR)
+*/
 public class Prueba {
     
     public Prueba(){}

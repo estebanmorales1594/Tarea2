@@ -3,6 +3,12 @@ package bancobac;
 
 import javax.swing.*;
 
+/*
+Esta clase es la ventana principal de los graficos, la cual hace uso 
+de las clases "BarrasGraficos" y "PastelGraficos" para mostrar los graficos
+
+Falta implementarla dentro de la Interfaz
+*/
 
 public class PrincipalGraficos extends JApplet {
     JTabbedPane pestañas;

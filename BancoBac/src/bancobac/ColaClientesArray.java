@@ -2,6 +2,12 @@ package bancobac;
 
 import javax.mail.MessagingException;
 
+/*
+En esta clase se van a crear las colas para cada uno de los clientes,
+lo cual va a necesitar de la clase "ClasePruebaMatriz".
+E igual, se va a poder agregar o sacar de la cola.
+*/
+
 public class ColaClientesArray {
     
     ClasePruebaMatriz discapacitados;
@@ -69,27 +75,24 @@ public class ColaClientesArray {
     
     public void sacar() throws MessagingException{
         
-        if (discapacitados != null ){
-            discapacitados.eliminar();
-        }
-        else{ 
-            if (adultomayor != null) {
-                adultomayor.eliminar();
+        if (this.discapacitados != null ){
+            this.discapacitados.eliminar();
+        }else{
+            System.out.print("Hola"); //OJO NI ENTRA AQUI :@
+            if (this.adultomayor != null) {
+                this.adultomayor.eliminar();
             }
             else{
-                if (embarazada != null) {
-                    embarazada.eliminar(); 
+                if (this.embarazada != null) {
+                    this.embarazada.eliminar(); 
                 }
                 else{
-                    if (corporativo != null) {
-                        corporativo.eliminar();   
+                    if (this.corporativo != null) {
+                        this.corporativo.eliminar();   
                     }
                     else{ 
-                        if (normal != null) {
-                            normal.eliminar(); 
-                        }
-                        else{
-                            vent.Error("Ya no hay clientes");
+                        if (this.normal != null) {
+                            this.normal.eliminar(); 
                         }
                     }
                 }
@@ -101,9 +104,9 @@ public class ColaClientesArray {
            
         ColaClientesArray cola = new ColaClientesArray();
         
-        cola.agregarCola("pepe","estebanmorales1594@hotmail.com","discapacitado");
+        cola.agregarCola("pepe","estebanmorales1594@hotmail.com","normal");
         cola.agregarCola("juan","estebanmorales1594@gmail.com","corporativo");
-        cola.agregarCola("maria","estebanmorales1594@hotmail.com","embarazada");
+        cola.agregarCola("maria","estebanmorales1594@hotmail.com","adulto mayor");
         
         
         cola.sacar();
