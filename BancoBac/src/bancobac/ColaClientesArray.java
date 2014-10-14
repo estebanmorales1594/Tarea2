@@ -75,30 +75,30 @@ public class ColaClientesArray {
     
     public void sacar() throws MessagingException{
         
-        if (this.discapacitados != null ){
-            this.discapacitados.eliminar();
-        }else{
-            System.out.print("Hola"); //OJO NI ENTRA AQUI :@
-            if (this.adultomayor != null) {
-                this.adultomayor.eliminar();
-            }
-            else{
-                if (this.embarazada != null) {
-                    this.embarazada.eliminar(); 
-                }
-                else{
-                    if (this.corporativo != null) {
-                        this.corporativo.eliminar();   
-                    }
-                    else{ 
-                        if (this.normal != null) {
-                            this.normal.eliminar(); 
-                        }
-                    }
-                }
-            }
-        }    
-    }        
+        if (discapacitados.getElemento(0, 0) != null ){
+            discapacitados.eliminar();
+        }
+        
+        else if (adultomayor.getElemento(0, 0) != null) {
+           adultomayor.eliminar();
+        }
+        
+        else if (embarazada.getElemento(0, 0) != null) {
+           embarazada.eliminar(); 
+           
+        }
+        
+        else if (corporativo.getElemento(0, 0) != null) {
+           corporativo.eliminar(); 
+        }
+        
+        else if (normal.getElemento(0, 0) != null) {
+           normal.eliminar(); 
+        }
+    }
+
+                      
+            
             
   public static void main(String[] args) throws Exception {
            
@@ -107,7 +107,6 @@ public class ColaClientesArray {
         cola.agregarCola("pepe","estebanmorales1594@hotmail.com","normal");
         cola.agregarCola("juan","estebanmorales1594@gmail.com","corporativo");
         cola.agregarCola("maria","estebanmorales1594@hotmail.com","adulto mayor");
-        
         
         cola.sacar();
         cola.sacar();
