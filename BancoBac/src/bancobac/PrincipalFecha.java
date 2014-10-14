@@ -5,9 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-/*
-Esta clase es una prueba para ordenar fechas
-*/
 
 public class PrincipalFecha extends JApplet {
     PanelDibujo pd;

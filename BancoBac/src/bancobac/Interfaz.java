@@ -16,16 +16,27 @@ import javax.swing.*;
  * @author Esteban
  */
 public class Interfaz extends javax.swing.JFrame {
+<<<<<<< HEAD
     ClasePruebaMatriz matriz=new ClasePruebaMatriz();
     JTabbedPane pestañas;
     PastelGraficos pastelgrafico;
     BarraGraficos barragrafico;
+=======
+    ColaClientesArray matriz=new ColaClientesArray();
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
     /**
      * Creates new form Interfaz
      */
     public Interfaz() {
         initComponents();
     }
+<<<<<<< HEAD
+=======
+    
+    public void Error(String Error){
+        ErrorLabel.setText(Error);
+    }
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,6 +63,10 @@ public class Interfaz extends javax.swing.JFrame {
         NumeroDeCajas = new javax.swing.JComboBox();
         NumeroDeCajasLabel = new javax.swing.JLabel();
         ErrorLabel = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        ListaComboBox = new javax.swing.JComboBox();
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,6 +131,11 @@ public class Interfaz extends javax.swing.JFrame {
         ErrorLabel.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ErrorLabel.setForeground(new java.awt.Color(255, 0, 0));
 
+<<<<<<< HEAD
+=======
+        ListaComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "discapacitado", "adulto mayor", "embarazada", "corporativo", "normal" }));
+
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,6 +171,16 @@ public class Interfaz extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(PasarACajasButton)
+<<<<<<< HEAD
+=======
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(NumeroDeCajasLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NumeroDeCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ClientesListButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(NumeroDeCajasLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -160,8 +190,12 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addComponent(GraficosButton))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(ErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(SalirButton)))
+=======
+                                .addGap(0, 0, Short.MAX_VALUE)))
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
                         .addGap(37, 37, 37))))
         );
         layout.setVerticalGroup(
@@ -185,6 +219,13 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+<<<<<<< HEAD
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PasarACajasButton)
+                    .addComponent(NumeroDeCajasLabel)
+                    .addComponent(NumeroDeCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PasarACajasButton)
@@ -236,7 +277,11 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void PasarACajasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasarACajasButtonActionPerformed
         try {
+<<<<<<< HEAD
             matriz.eliminar();
+=======
+            matriz.sacar();
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
         } catch (MessagingException ex) {
             ErrorLabel.setText("Error para enviar Correo");
             Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);

@@ -2,14 +2,6 @@ package bancobac;
 
 import javax.mail.MessagingException;
 
-/*
-Esta clase sirve para crear la estructura de matrices en arreglos,
-los principales metodos de la clase son agregar, que va a recibir 
-los datos del cliente, y eliminar, que va a eliminar el primer elemento
-de un arreglo determinado.
-En ambos metodos, se va a enviar correos al cliente notificando su situacion
-*/
-
 public class ClasePruebaMatriz {
 
     public int size;
@@ -36,9 +28,14 @@ public class ClasePruebaMatriz {
             this.arreglo[this.size][1] = correo;
             this.arreglo[this.size][2] = tipo;
             this.size++;
+<<<<<<< HEAD
             Envia.Enviador(correo, "Banco", "Sr(a). " + cliente + " usted ha sido agregado a nuestro sistema");
         }
         
+=======
+            Envia.Enviador(correo, "Banco", "Sr(a). "+cliente+" usted ha sido agregado a nuestro sistema");
+            }
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
     }        
     
     
@@ -63,11 +60,19 @@ public class ClasePruebaMatriz {
 
     public void eliminar() throws MessagingException {
         int i = 0;
+<<<<<<< HEAD
 
         String Correo2 = this.arreglo[0][1];
         String nombre2 = this.arreglo[0][0];
 
         Envia.Enviador(Correo2, "Se turno", "Sr(a)"+nombre2+", llego su turno puede pasar a la caja");
+=======
+        
+        if (this.size != 0){
+            String Correo2 = this.arreglo[0][1];
+            String nombre2 = this.arreglo[0][0];
+            Envia.Enviador(Correo2, "Se turno", "Sr(a)"+nombre2+", llego su turno puede pasar a la caja");
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
             
         while (i != this.size){
             this.arreglo[i] = this.arreglo[i+1];

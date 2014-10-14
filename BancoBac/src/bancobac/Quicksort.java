@@ -1,10 +1,5 @@
 package bancobac;
 
-/*
-Esta clase es una prueba para ordenar datos de tipo "int",
-HAY QUE IMPLEMENTARLA PARA "String"
-*/
-
 public class Quicksort{
     int[] matrix;
     public void Quicksort(int matrix[], int a, int b){

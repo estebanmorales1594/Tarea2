@@ -2,12 +2,6 @@ package bancobac;
 
 import javax.mail.MessagingException;
 
-/*
-En esta clase se van a crear las colas para cada uno de los clientes,
-lo cual va a necesitar de la clase "ClasePruebaMatriz".
-E igual, se va a poder agregar o sacar de la cola.
-*/
-
 public class ColaClientesArray {
     
     ClasePruebaMatriz discapacitados;
@@ -77,6 +71,7 @@ public class ColaClientesArray {
  
     public void sacar() throws MessagingException{
         
+<<<<<<< HEAD
 
         if (discapacitados.getElemento(0, 0) != null ){
             discapacitados.eliminar();
@@ -107,12 +102,42 @@ public class ColaClientesArray {
 
     
 
+=======
+        if (discapacitados != null ){
+            discapacitados.eliminar();
+        }
+        else{ 
+            if (adultomayor != null) {
+                adultomayor.eliminar();
+            }
+            else{
+                if (embarazada != null) {
+                    embarazada.eliminar(); 
+                }
+                else{
+                    if (corporativo != null) {
+                        corporativo.eliminar();   
+                    }
+                    else{ 
+                        if (normal != null) {
+                            normal.eliminar(); 
+                        }
+                        else{
+                            vent.Error("Ya no hay clientes");
+                        }
+                    }
+                }
+            }
+        }    
+    }        
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
             
   public static void main(String[] args) throws Exception {
            
         ColaClientesArray cola = new ColaClientesArray();
         ClasePruebaMatriz hola = new ClasePruebaMatriz();
         
+<<<<<<< HEAD
 
 
 
@@ -122,6 +147,12 @@ public class ColaClientesArray {
         cola.agregarCola("hola","jose12.13@hotmail.com","adulto mayor");
         cola.agregarCola("nooooo","jose12.13@hotmail.com","normal");
 
+=======
+        cola.agregarCola("pepe","estebanmorales1594@hotmail.com","discapacitado");
+        cola.agregarCola("juan","estebanmorales1594@gmail.com","corporativo");
+        cola.agregarCola("maria","estebanmorales1594@hotmail.com","embarazada");
+        
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
         
         cola.sacar();
         cola.sacar();

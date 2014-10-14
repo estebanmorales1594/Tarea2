@@ -9,19 +9,11 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 
-/*
-Esta clase es para crear los graficos pastel, 
-utilizando la libreria JFreeChart,
-va a extraer el tamaña de cada una de las listas colas, 
-dicha cantidad va a servir para realizar la grafica.
-*/
-
 public class PastelGraficos extends JPanel {
     DefaultPieDataset porciones;
     JFreeChart pastel;
     JLabel grafico;
     JButton boton;
-    ColaClientesArray cola;
 
     public PastelGraficos(){
         boton=new JButton("Actualizar");

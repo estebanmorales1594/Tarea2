@@ -1,8 +1,13 @@
 package bancobac;
 
+/**
+ *
+ * @author Esteban
+ */
 import java.util.Properties; 
 import javax.mail.*; 
 import javax.mail.internet.InternetAddress; 
+<<<<<<< HEAD
 import javax.mail.internet.MimeMessage;
 
 /*
@@ -10,6 +15,9 @@ Esta clase es la que enviar correos cada vez que se agreguen clientes
 o sea el turno de una persona.
 Se utiliza la libreria Mail
 */
+=======
+import javax.mail.internet.MimeMessage; 
+>>>>>>> parent of 00d3c59... Algunas con Documentacion
 
 public class EnviarCorreo {
     final String Cuenta; 
@@ -44,7 +52,7 @@ public class EnviarCorreo {
      
             Authenticator autorizar = new EnviarCorreo.autentificadorSMTP(); 
             Session sesion = Session.getInstance(propiedades, autorizar); 
-            //Session.setDebug(true); 
+            // session.setDebug(true); 
 
             MimeMessage msg = new MimeMessage(sesion); 
             msg.setText(Correo); 

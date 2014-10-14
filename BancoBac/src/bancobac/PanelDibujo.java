@@ -9,10 +9,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JPanel;
 
-/*
-Esta clase es una prueba para ordenar fechas
-*/
-
 public class PanelDibujo extends JPanel {
 
     PrincipalFecha p;
