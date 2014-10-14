@@ -117,12 +117,21 @@ public class ColaClientesArray {
 
 
         cola.agregarCola("pepe","jose12.13@hotmail.com","adulto mayor");
-        cola.agregarCola("juan","jose12.13@hotmail.com","discapacitado");
+        cola.agregarCola("juan","jose12.13@hotmail.com","corporativo");
         cola.agregarCola("maria","jose12.13@hotmail.com","discapacitado");
         cola.agregarCola("hola","jose12.13@hotmail.com","adulto mayor");
         cola.agregarCola("nooooo","jose12.13@hotmail.com","normal");
+        cola.agregarCola("a","jose12.13@hotmail.com","adulto mayor");
+        cola.agregarCola("j","jose12.13@hotmail.com","normal");
+        cola.agregarCola("k","jose12.13@hotmail.com","discapacitado");
+        cola.agregarCola("allll","jose12.13@hotmail.com","embarazada");
+        cola.agregarCola("sisisisi","jose12.13@hotmail.com","corporativo");
 
         
+        cola.sacar();
+        cola.sacar();
+        cola.sacar();
+        cola.sacar();
         cola.sacar();
         cola.sacar();
         cola.sacar();
