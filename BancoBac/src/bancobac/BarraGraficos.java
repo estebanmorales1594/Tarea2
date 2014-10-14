@@ -37,7 +37,7 @@ public class BarraGraficos extends JPanel {
                 int CantAdultos=cola.adultomayor.size;
                 int CantEmb=cola.embarazada.size;
                 int CantCorp=cola.corporativo.size;
-                int CantNormal=cola.normal;
+                int CantNormal=cola.normal.size;
                 /*Las cantidades se sacan en base a las cantidades que se 
                 encuentran en el momento en el banco, si hubiera que hacerlo
                 con la cantidad total.... 

@@ -35,19 +35,19 @@ public class ClasePruebaMatriz {
             this.arreglo[this.size][0] = cliente;
             this.arreglo[this.size][1] = correo;
             this.arreglo[this.size][2] = tipo;
-          
             this.size++;
+            Envia.Enviador(correo, "Banco", "Sr(a). " + cliente + " usted ha sido agregado a nuestro sistema");
         }
         
     }        
     
     
-    public void agregarC(String cliente, String correo, String tipo) throws MessagingException{
-        
-        
-        if (this.size < this.maxsize) {  
-
-            Envia.Enviador(correo, "Banco", "Sr(a). " + cliente + " usted ha sido agregado a nuestro sistema");
+    public void agregarC(String cliente, String correo, String tipo) throws MessagingException{  
+        if (this.size < this.maxsize) {
+            this.arreglo[this.size][0] = cliente;
+            this.arreglo[this.size][1] = correo;
+            this.arreglo[this.size][2] = tipo;
+            this.size++;
         }
     }
 
@@ -75,28 +75,4 @@ public class ClasePruebaMatriz {
             }
         this.size --;           
         }       
-    
-
-
-
-
-    public static void main(String[] args) throws Exception {
-           
-        ClasePruebaMatriz cola = new ClasePruebaMatriz();
-        
-        cola.agregar("jose","jose12.13@hotmail.com","corporativo");
-        cola.agregar("a","jose12.13@hotmail.com","normal");
-        cola.agregar("b","jose12.13@hotmail.com","normal");
-        cola.agregar("c","jose12.13@hotmail.com","normal");
-        cola.agregar("f","jose12.13@hotmail.com","normal");
-        
-        
-        cola.eliminar();
-        cola.eliminar();
-        
-        String cola1 = cola.getElemento(0,0);
-        
-        System.out.println(cola1);
-     
-            }
 }
